@@ -58,8 +58,8 @@
   <!-- Fontes carregadas sem travar a página -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" /></noscript>
 
   <script>
     /* Aplica as preferências de acessibilidade antes de desenhar a página */
@@ -88,11 +88,16 @@
       --wa-btn:    #1A7F45;
       --insta-btn: #C1235A;
       --star:      #E0A23E;
+      --bg:        #F5F7F2;
+      --mint:      #E3F1E8;
+      --forest:    #0F3D2A;
+      --rule:      rgba(15,61,42,0.10);
+      --serif:     "Newsreader", Georgia, "Times New Roman", serif;
       --r:  18px;
       --r2: 28px;
     }
     html { scroll-behavior:smooth; }
-    body { background:#EEF7FA; }
+    body { background:var(--bg); }
     body {
       font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
       color:var(--ink);
@@ -100,7 +105,8 @@
       overflow-x:hidden;
       position:relative;
     }
-    .heading { font-family:"Poppins",sans-serif; }
+    .heading { font-family:var(--serif); }
+    h1, h2, h3, h4 { line-height:1.22; }
     .sage { color:var(--sage-dk); }
     .container { max-width:1140px; margin:0 auto; padding:0 32px; }
     section[id] { scroll-margin-top:20px; }
@@ -119,9 +125,9 @@
       position:fixed; inset:0; z-index:0;
       pointer-events:none;
       overflow:hidden;
-      background: #EEF7FA url("images/logo-fundo.png") no-repeat center center;
-      background-size: 540px auto;
-      opacity: 0.3;
+      background: var(--bg) url("images/logo-fundo.png") no-repeat center center;
+      background-size: 620px auto;
+      opacity: 0.07;
     }
     .hero, .section, .footer, .nav, .wa-float, .detail-overlay {
       position:relative; z-index:1;
@@ -131,7 +137,7 @@
     .detail-overlay { position:fixed !important; z-index:5000 !important; }
 
     /* ============ SCROLL REVEAL ============ */
-    .js .reveal { opacity:0; transform:translateY(36px); transition:opacity .7s ease, transform .7s ease; }
+    .js .reveal { opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
     .js .reveal.visible { opacity:1; transform:translateY(0); }
     .reveal-delay-1.visible { transition-delay:.1s; }
     .reveal-delay-2.visible { transition-delay:.2s; }
@@ -149,10 +155,10 @@
       width:42px; height:42px; border-radius:13px;
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
       display:flex; align-items:center; justify-content:center; flex-shrink:0;
-      box-shadow:0 6px 16px rgba(111,175,190,0.35);
+      box-shadow:0 6px 16px rgba(15,61,42,0.19);
     }
     .logo-mark svg { width:22px; height:22px; }
-    .logo-text { font-family:"Poppins",sans-serif; font-size:19px; font-weight:700; color:var(--sage-dk); line-height:1.1; }
+    .logo-text { font-family:var(--serif); font-size:22px; font-weight:600; color:var(--sage-dk); line-height:1.1; }
     .nav-links { display:flex; gap:28px; list-style:none; margin-left:auto; }
     .nav-links a { color:var(--ink-soft); text-decoration:none; font-size:14.5px; font-weight:500; transition:color .2s; cursor:pointer; }
     .nav-links a:hover { color:var(--sage-dk); }
@@ -161,10 +167,10 @@
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
       color:var(--white); font-size:13.5px; font-weight:600;
       padding:12px 24px; border-radius:100px; text-decoration:none; flex-shrink:0;
-      box-shadow:0 8px 20px rgba(111,175,190,0.3);
+      box-shadow:0 8px 20px rgba(15,61,42,0.17);
       transition:transform .2s, box-shadow .2s;
     }
-    .nav-cta:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(111,175,190,0.4); }
+    .nav-cta:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(15,61,42,0.22); }
     .nav-insta {
       display:flex; align-items:center; justify-content:center;
       width:40px; height:40px; border-radius:50%; flex-shrink:0;
@@ -177,16 +183,16 @@
     .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:150px 32px 90px; text-align:center; }
     .hero-inner { max-width:780px; margin:0 auto; position:relative; }
     .hero-photo-floating {
-      width:96px; height:96px; border-radius:50%; overflow:hidden;
-      margin:0 auto 28px; box-shadow:0 16px 40px rgba(111,175,190,0.3);
+      width:128px; height:128px; border-radius:50%; overflow:hidden;
+      margin:0 auto 26px; box-shadow:0 16px 40px rgba(15,61,42,0.17);
       border:4px solid white; background:#2a2a2a;
     }
     .hero-photo-floating img { width:100%; height:100%; object-fit:cover; display:block; }
     .hero-eyebrow {
-      display:inline-block; font-size:13px; font-weight:700; letter-spacing:.08em;
-      color:var(--sage-dk); text-transform:uppercase; margin-bottom:20px;
+      display:inline-block; font-family:var(--serif); font-style:italic; font-size:22px; font-weight:500;
+      color:var(--sage-dk); margin-bottom:10px;
     }
-    .hero-title { font-family:"Poppins",sans-serif; font-size:clamp(36px,6vw,56px); font-weight:800; line-height:1.18; color:var(--sage-dk); margin-bottom:22px; }
+    .hero-title { font-family:var(--serif); font-size:clamp(44px,7.4vw,76px); font-weight:600; line-height:1.04; letter-spacing:-0.02em; color:var(--sage-deep); margin-bottom:26px; }
     .hero-meta { font-size:16px; color:var(--ink-soft); margin-bottom:8px; }
     .hero-crp { font-size:13.5px; font-weight:600; color:var(--sage-dk); margin-bottom:8px; }
     .hero-sub { font-size:16.5px; color:var(--ink-soft); line-height:1.8; max-width:560px; margin:0 auto 40px; }
@@ -196,10 +202,10 @@
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
       color:var(--white); font-weight:600; font-size:15px;
       padding:16px 34px; border-radius:100px; text-decoration:none; border:none; cursor:pointer;
-      box-shadow:0 10px 26px rgba(111,175,190,0.35);
+      box-shadow:0 10px 26px rgba(15,61,42,0.19);
       transition:transform .2s, box-shadow .2s;
     }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(111,175,190,0.45); }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 32px rgba(15,61,42,0.25); }
     .btn-primary .ic { width:18px; height:18px; transition:transform .2s; }
     .btn-primary:hover .ic { transform:translateX(3px); }
     .btn-ghost {
@@ -213,29 +219,29 @@
 
     /* ============ SECTIONS ============ */
     .section { padding:80px 0; position:relative; }
-    .s-label { font-size:13px; letter-spacing:.06em; color:var(--sage-dk); text-transform:uppercase; font-weight:700; margin-bottom:14px; }
-    .s-title { font-family:"Poppins",sans-serif; font-size:clamp(30px,4.2vw,44px); font-weight:700; line-height:1.22; margin-bottom:14px; color:var(--ink); }
+    .s-label { font-size:15px; color:var(--sage-dk); font-weight:600; margin-bottom:10px; }
+    .s-title { font-family:var(--serif); font-size:clamp(34px,4.6vw,52px); font-weight:500; line-height:1.1; letter-spacing:-0.015em; margin-bottom:16px; color:var(--ink); }
     .s-desc { font-size:16px; color:var(--ink-soft); line-height:1.8; max-width:600px; margin-bottom:40px; }
     .center { text-align:center; margin-left:auto; margin-right:auto; }
 
     /* ============ GLASS CARD ============ */
     .glass {
-      background:rgba(255,255,255,0.7);
-      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-      border:1px solid rgba(255,255,255,0.65);
+      background:rgba(255,255,255,0.74);
+      backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,0.9);
       border-radius:var(--r2);
-      box-shadow:0 20px 50px -20px rgba(111,175,190,0.25);
+      box-shadow:0 20px 50px -20px rgba(15,61,42,0.14);
     }
 
     /* ============ SOBRE ============ */
     .sobre-wrap { display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center; }
     .sobre-photo-frame {
       border-radius:var(--r2); overflow:hidden; aspect-ratio:3/4; max-width:380px;
-      box-shadow:0 28px 60px -18px rgba(111,175,190,0.35); background:#2a2a2a;
+      box-shadow:0 28px 60px -18px rgba(15,61,42,0.19); background:#2a2a2a;
     }
     .sobre-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
     .sobre-text-box { padding:44px; }
-    .sobre-text-box h2 { font-family:"Poppins",sans-serif; font-size:clamp(30px,4vw,40px); font-weight:700; margin-bottom:6px; color:var(--ink); }
+    .sobre-text-box h2 { font-family:var(--serif); font-size:clamp(32px,4vw,44px); font-weight:500; letter-spacing:-0.01em; line-height:1.1; margin-bottom:6px; color:var(--ink); }
     .sobre-role { font-size:14px; color:var(--sage-dk); font-weight:600; margin-bottom:22px; }
     .sobre-text-box p { font-size:15.5px; color:var(--ink-soft); line-height:1.85; margin-bottom:16px; }
     .btn-link {
@@ -247,20 +253,21 @@
     .btn-link:hover { border-color:var(--sage-dk); gap:10px; }
 
     /* ============ ÁREAS ============ */
-    .areas-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px; }
+    .areas-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    @media(max-width:980px){ .areas-grid { grid-template-columns:repeat(2,1fr); } }
     .area-card { padding:32px 28px; transition:transform .3s, box-shadow .3s; cursor:default; display:flex; flex-direction:column; }
-    .area-card:hover { transform:translateY(-6px); box-shadow:0 30px 60px -20px rgba(111,175,190,0.35); }
+    .area-card:hover { transform:translateY(-6px); box-shadow:0 30px 60px -20px rgba(15,61,42,0.19); }
     .area-card .btn-link { align-self:flex-start; margin-top:auto; padding-top:12px; }
     .area-icon {
       width:54px; height:54px; border-radius:16px;
-      background:linear-gradient(135deg,var(--sage-pale) 0%,#C8E6EE 100%);
+      background:var(--mint);
       display:flex; align-items:center; justify-content:center;
       color:var(--sage-dk); margin-bottom:20px;
       transition:transform .3s;
     }
     .area-icon .ic { width:26px; height:26px; stroke-width:1.8; }
-    .area-card:hover .area-icon { transform:scale(1.08) rotate(-4deg); }
-    .area-card h3 { font-family:"Poppins",sans-serif; font-size:18.5px; font-weight:700; margin-bottom:10px; color:var(--ink); }
+    
+    .area-card h3 { font-family:var(--serif); font-size:21.8px; font-weight:600; margin-bottom:10px; color:var(--ink); }
     .area-card p { font-size:14px; color:var(--ink-soft); line-height:1.7; }
 
     /* ============ COMO FUNCIONA ============ */
@@ -269,11 +276,11 @@
     .step-num {
       width:48px; height:48px; border-radius:50%;
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
-      color:white; font-family:"Poppins",sans-serif; font-weight:700; font-size:18px;
+      color:white; font-family:var(--serif); font-weight:700; font-size:18px;
       display:flex; align-items:center; justify-content:center;
-      margin-bottom:18px; box-shadow:0 8px 20px rgba(111,175,190,0.3);
+      margin-bottom:18px; box-shadow:0 8px 20px rgba(15,61,42,0.17);
     }
-    .step-card h3 { font-family:"Poppins",sans-serif; font-size:18.5px; font-weight:700; margin-bottom:10px; color:var(--ink); }
+    .step-card h3 { font-family:var(--serif); font-size:21.8px; font-weight:600; margin-bottom:10px; color:var(--ink); }
     .step-card p { font-size:14px; color:var(--ink-soft); line-height:1.75; }
 
     /* ============ DEPOIMENTOS ============ */
@@ -288,7 +295,7 @@
       width:38px; height:38px; border-radius:50%;
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
       color:var(--white); display:flex; align-items:center; justify-content:center;
-      font-family:"Poppins",sans-serif; font-weight:700; font-size:14px; flex-shrink:0;
+      font-family:var(--serif); font-weight:600; font-size:17px; flex-shrink:0;
     }
     .testi-name { font-size:13px; font-weight:600; color:var(--ink); }
     .testi-role { font-size:11px; color:var(--ink-soft); }
@@ -301,7 +308,7 @@
       display:flex; justify-content:space-between; align-items:center; padding:22px 28px; cursor:pointer; gap:20px;
       width:100%; background:none; border:0; text-align:left; font:inherit; color:inherit; border-radius:var(--r2);
     }
-    .faq-qt { font-family:"Poppins",sans-serif; font-size:16px; font-weight:600; color:var(--ink); line-height:1.5; }
+    .faq-qt { font-family:"Inter",sans-serif; font-size:16px; font-weight:600; color:var(--ink); line-height:1.5; }
     .faq-icon {
       width:28px; height:28px; border-radius:50%; flex-shrink:0;
       background:var(--sage-pale); color:var(--sage-dk);
@@ -316,19 +323,19 @@
     .cta-final {
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-deep) 100%);
       border-radius:var(--r2); padding:64px 56px; text-align:center;
-      box-shadow:0 30px 70px -20px rgba(58,122,140,0.4);
+      box-shadow:0 30px 70px -20px rgba(15,61,42,0.28);
     }
-    .cta-final h2 { font-family:"Poppins",sans-serif; font-size:clamp(26px,4vw,38px); font-weight:700; margin-bottom:14px; color:white; }
+    .cta-final h2 { font-family:var(--serif); font-size:clamp(30px,4.4vw,46px); font-weight:500; letter-spacing:-0.015em; line-height:1.12; margin-bottom:14px; color:white; }
     .cta-final p { font-size:15.5px; color:rgba(255,255,255,0.92); max-width:500px; margin:0 auto 30px; line-height:1.7; }
     .cta-final .btn-primary { background:white; color:var(--sage-dk); box-shadow:0 10px 26px rgba(0,0,0,0.15); }
     .cta-final .btn-primary:hover { background:var(--sage-pale); }
 
     /* ============ LOCALIZAÇÃO ============ */
     .local-wrap { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
-    .local-map { border-radius:var(--r2); overflow:hidden; min-height:340px; box-shadow:0 20px 50px -20px rgba(111,175,190,0.25); }
+    .local-map { border-radius:var(--r2); overflow:hidden; min-height:340px; box-shadow:0 20px 50px -20px rgba(15,61,42,0.14); }
     .local-map iframe { width:100%; height:100%; min-height:340px; border:0; display:block; }
     .local-info { padding:36px; display:flex; flex-direction:column; justify-content:center; }
-    .local-info h3 { font-family:"Poppins",sans-serif; font-size:20px; font-weight:700; margin-bottom:14px; color:var(--ink); }
+    .local-info h3 { font-family:var(--serif); font-size:23.6px; font-weight:600; margin-bottom:14px; color:var(--ink); }
     .local-info p { font-size:15px; color:var(--ink-soft); line-height:1.8; margin-bottom:10px; }
     .local-info .btn-primary { margin-top:16px; align-self:flex-start; }
     .addr { display:flex; gap:10px; align-items:flex-start; }
@@ -338,7 +345,7 @@
     .footer { padding:56px 0 0; position:relative; }
     .footer-inner { display:flex; align-items:flex-start; gap:56px; padding-bottom:36px; flex-wrap:wrap; }
     .footer-logo { display:flex; align-items:center; gap:11px; margin-bottom:14px; }
-    .footer-logo-text { font-family:"Poppins",sans-serif; font-size:18px; font-weight:700; color:var(--ink); }
+    .footer-logo-text { font-family:var(--serif); font-size:21px; font-weight:600; color:var(--ink); }
     .footer-brand p { font-size:14px; color:var(--ink-soft); line-height:1.7; max-width:280px; }
     .footer-contact { margin-top:16px; display:flex; flex-direction:column; gap:8px; }
     .footer-contact p { font-size:13px !important; }
@@ -374,7 +381,7 @@
     /* ============ DETAIL OVERLAY ============ */
     .detail-overlay {
       position:fixed; inset:0; z-index:5000;
-      background:linear-gradient(165deg, #DFF0F5 0%, #EEF7FA 45%, #E4F2F6 100%);
+      background:var(--bg);
       overflow-y:auto; overscroll-behavior:contain;
       transform:translateX(100%);
       transition:transform .45s cubic-bezier(.4,0,.2,1), visibility 0s linear .45s;
@@ -397,18 +404,18 @@
       display:flex; align-items:center;
     }
     .detail-close-bar .container { display:flex; align-items:center; width:100%; }
-    .detail-title-bar { font-family:"Poppins",sans-serif; font-weight:700; font-size:16px; color:var(--sage-dk); margin-left:auto; margin-right:auto; text-align:center; padding:0 12px; }
+    .detail-title-bar { font-family:var(--serif); font-weight:600; font-size:19px; color:var(--sage-dk); margin-left:auto; margin-right:auto; text-align:center; padding:0 12px; }
     .detail-icon { margin-bottom:22px; }
-    .detail-eyebrow { font-size:13px; font-weight:700; letter-spacing:.06em; color:var(--sage-dk); text-transform:uppercase; margin-bottom:14px; }
-    .detail-h1 { font-family:"Poppins",sans-serif; font-size:clamp(30px,4.5vw,44px); font-weight:800; color:var(--ink); margin-bottom:28px; line-height:1.2; }
+    .detail-eyebrow { font-size:15px; font-weight:600; color:var(--sage-dk); margin-bottom:10px; }
+    .detail-h1 { font-family:var(--serif); font-size:clamp(36px,5vw,54px); font-weight:500; letter-spacing:-0.015em; color:var(--ink); margin-bottom:28px; line-height:1.2; }
     .detail-h1:focus { outline:none; }
     .detail-body p { font-size:16px; color:var(--ink-soft); line-height:1.9; margin-bottom:20px; }
-    .detail-body h3 { font-family:"Poppins",sans-serif; font-size:20px; font-weight:700; color:var(--ink); margin:32px 0 14px; }
+    .detail-body h3 { font-family:var(--serif); font-size:23.6px; font-weight:600; color:var(--ink); margin:32px 0 14px; }
     .detail-body ul { margin:0 0 20px 0; padding-left:0; list-style:none; }
     .detail-body li { font-size:15.5px; color:var(--ink-soft); line-height:1.8; padding-left:26px; position:relative; margin-bottom:10px; }
     .detail-body li::before { content:"✓"; position:absolute; left:0; color:var(--sage-dk); font-weight:700; }
     .detail-cta { margin-top:40px; padding:32px; }
-    .detail-cta h3 { font-family:"Poppins",sans-serif; font-size:20px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+    .detail-cta h3 { font-family:var(--serif); font-size:23.6px; font-weight:600; color:var(--ink); margin-bottom:6px; }
     .detail-cta p { font-size:15px; color:var(--ink-soft); margin-bottom:20px; }
 
     /* ============ RESPONSIVE ============ */
@@ -435,11 +442,11 @@
     .funciona-item { display:flex; align-items:flex-start; gap:20px; padding:20px 24px; }
     .funciona-icon {
       width:48px; height:48px; border-radius:14px; flex-shrink:0;
-      background:linear-gradient(135deg,var(--sage-pale),#C8E6EE);
+      background:var(--mint);
       display:flex; align-items:center; justify-content:center;
       color:var(--sage-dk);
     }
-    .funciona-item .funciona-text h3 { font-family:"Poppins",sans-serif; font-size:16px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+    .funciona-item .funciona-text h3 { font-family:var(--serif); font-size:20px; font-weight:600; color:var(--ink); margin-bottom:6px; }
     .funciona-item .funciona-text p { font-size:14px; color:var(--ink-soft); font-weight:400; margin:0; line-height:1.7; }
 
     /* ============ MODALIDADES ============ */
@@ -448,12 +455,12 @@
     .modal-card:hover { transform:translateY(-6px); }
     .modal-card-icon {
       width:64px; height:64px; border-radius:50%; margin:0 auto 22px;
-      background:linear-gradient(135deg,var(--sage-pale),#C8E6EE);
+      background:var(--mint);
       display:flex; align-items:center; justify-content:center;
       color:var(--sage-dk);
     }
     .modal-card-icon .ic { width:28px; height:28px; stroke-width:1.8; }
-    .modal-card h3 { font-family:"Poppins",sans-serif; font-size:18px; font-weight:700; margin-bottom:10px; color:var(--ink); }
+    .modal-card h3 { font-family:var(--serif); font-size:21.2px; font-weight:600; margin-bottom:10px; color:var(--ink); }
     .modal-card p { font-size:14px; color:var(--ink-soft); line-height:1.7; }
     .modal-card .modal-addr { font-size:12px; color:var(--sage-dk); font-weight:600; margin-top:8px; }
 
@@ -463,12 +470,12 @@
     .progress-header { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
     .progress-icon {
       width:44px; height:44px; border-radius:12px; flex-shrink:0;
-      background:linear-gradient(135deg,var(--sage-pale),#C8E6EE);
+      background:var(--mint);
       display:flex; align-items:center; justify-content:center;
       color:var(--sage-dk);
     }
-    .progress-period { font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--sage-dk); text-transform:uppercase; }
-    .progress-title { font-family:"Poppins",sans-serif; font-size:15px; font-weight:700; color:var(--ink); margin-top:2px; line-height:1.3; }
+    .progress-period { font-size:13px; font-weight:600; color:var(--sage-dk); }
+    .progress-title { font-family:var(--serif); font-size:19px; font-weight:600; color:var(--ink); margin-top:2px; line-height:1.3; }
     .progress-ul { list-style:none; padding:0; margin:0; }
     .progress-ul li { font-size:13px; color:var(--ink-soft); line-height:1.7; padding-left:20px; position:relative; margin-bottom:6px; }
     .progress-ul li::before { content:"↗"; position:absolute; left:0; color:var(--sage-dk); font-size:11px; top:2px; }
@@ -492,7 +499,7 @@
     }
     .a11y-panel.open { opacity:1; transform:none; visibility:visible; transition:opacity .2s, transform .2s; }
     .a11y-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-    .a11y-head h2 { font-family:"Poppins",sans-serif; font-size:16px; font-weight:700; color:var(--ink); }
+    .a11y-head h2 { font-family:"Inter",sans-serif; font-size:16px; font-weight:700; color:var(--ink); }
     .a11y-x { background:none; border:0; cursor:pointer; color:var(--ink-soft); width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
     .a11y-x:hover { background:var(--sage-pale); color:var(--sage-dk); }
     .a11y-x .ic { width:18px; height:18px; }
@@ -502,7 +509,7 @@
     .a11y-size { display:flex; gap:6px; }
     .a11y-size button {
       width:36px; height:32px; border-radius:9px; border:1.5px solid var(--line); background:#fff; cursor:pointer;
-      font-family:"Poppins",sans-serif; font-weight:700; color:var(--sage-dk); font-size:13px;
+      font-family:"Inter",sans-serif; font-weight:700; color:var(--sage-dk); font-size:13px;
     }
     .a11y-size button:hover { border-color:var(--sage); }
     .switch { position:relative; width:44px; height:26px; border-radius:100px; border:0; cursor:pointer; background:#CBD8D1; transition:background .2s; flex-shrink:0; }
@@ -538,6 +545,71 @@
     /* VLibras */
     [vw].vw-off { display:none !important; }
 
+
+    /* ============ PASSOS COM LINHA ============ */
+    .steps { list-style:none; display:grid; grid-template-columns:repeat(3,1fr); gap:44px; position:relative; margin-top:8px; }
+    .steps::before { content:""; position:absolute; top:34px; left:34px; right:calc(33.33% - 63px); height:1.5px; background:rgba(0,107,58,.28); }
+    .step { position:relative; }
+    .step-n {
+      width:68px; height:68px; border-radius:50%; position:relative; z-index:1;
+      background:var(--bg); border:1.5px solid var(--sage);
+      display:flex; align-items:center; justify-content:center;
+      font-family:var(--serif); font-size:34px; font-weight:500; color:var(--sage-dk); margin-bottom:24px;
+    }
+    .step h3 { font-family:var(--serif); font-size:23px; font-weight:600; color:var(--ink); margin-bottom:10px; line-height:1.25; }
+    .step p { font-size:15px; color:var(--ink-soft); line-height:1.75; max-width:34ch; }
+
+    /* ============ DEPOIMENTOS EM FAIXA VERDE ============ */
+    .band { background:var(--forest); color:#fff; padding:104px 0; }
+    .band .s-label { color:#9FD9B8; }
+    .band .s-title { color:#fff; }
+    .band .s-desc { color:rgba(255,255,255,.72); }
+    .testi-wrap { display:grid; grid-template-columns:1.2fr 1fr; gap:56px; align-items:center; }
+    .testi-feat { position:relative; padding-top:46px; }
+    .testi-feat::before {
+      content:"\201C"; position:absolute; top:-34px; left:-8px;
+      font-family:var(--serif); font-size:180px; line-height:1; color:rgba(159,217,184,.22);
+    }
+    .testi-feat .testi-text { font-family:var(--serif); font-size:clamp(22px,2.4vw,29px); line-height:1.45; color:#fff; margin-bottom:28px; }
+    .testi-side { display:flex; flex-direction:column; gap:18px; }
+    .testi-mini { padding:26px 26px 24px; border-radius:22px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); }
+    .testi-mini .testi-text { font-size:15px; color:rgba(255,255,255,.86); margin-bottom:16px; }
+    .band .testi-name { color:#fff; }
+    .band .testi-role { color:rgba(255,255,255,.7); }
+    .band .testi-avatar { background:#9FD9B8; color:var(--forest); }
+    .band .btn-link { color:#9FD9B8; }
+    .band .btn-link:hover { border-color:#9FD9B8; }
+
+    /* ============ FAQ EM PAINEL ÚNICO ============ */
+    .faq-panel { max-width:780px; margin:0 auto; background:rgba(255,255,255,.8); border-radius:var(--r2); border:1px solid #fff; box-shadow:0 18px 40px -26px rgba(15,61,42,.3); padding:6px 0; }
+    .faq-panel .faq-item { border-top:1px solid var(--rule); }
+    .faq-panel .faq-item:first-child { border-top:0; }
+
+    /* ============ ABORDAGEM EM DUAS COLUNAS ============ */
+    .abord-wrap { display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:start; }
+    .abord-head { position:sticky; top:110px; }
+    .abord-head .s-desc { margin-bottom:0; }
+    .abord-wrap .funciona-list { max-width:none; gap:0; }
+    .abord-wrap .funciona-item { padding:26px 0; border-top:1px solid var(--rule); gap:22px; }
+    .abord-wrap .funciona-item:first-child { border-top:0; padding-top:4px; }
+
+    /* ============ RODAPÉ: BOTÕES JUNTOS ============ */
+    .footer-social { display:flex; flex-direction:column; gap:10px; }
+    .footer-social .footer-wa { align-self:stretch; justify-content:center; }
+
+    @media(max-width:980px) {
+      .testi-wrap, .abord-wrap { grid-template-columns:1fr; gap:36px; }
+      .abord-head { position:static; }
+    }
+    @media(max-width:760px) {
+      .steps { grid-template-columns:1fr; gap:34px; }
+      .steps::before { top:34px; bottom:34px; left:33px; right:auto; width:1.5px; height:auto; }
+      .step { padding-left:92px; min-height:68px; }
+      .step-n { position:absolute; left:0; top:0; margin:0; }
+      .band { padding:72px 0; }
+      .testi-feat::before { font-size:130px; top:-22px; }
+    }
+
     /* ============ MOBILE FIXES ============ */
     @media(max-width:600px) {
       .bg-fixed { display:none !important; }
@@ -552,14 +624,14 @@
       .logo-text { font-size:16px; }
 
       .hero { padding:120px 20px 70px; }
-      .hero-photo-floating { width:82px; height:82px; }
-      .hero-title { font-size:clamp(30px,9vw,42px); }
+      .hero-photo-floating { width:104px; height:104px; }
+      .hero-title { font-size:clamp(40px,11vw,52px); }
       .hero-sub { font-size:15px; }
       .hero-actions { flex-direction:column; align-items:center; gap:12px; }
       .hero-actions a { width:100%; max-width:300px; justify-content:center; }
 
       .section { padding:52px 0; }
-      .s-title { font-size:clamp(24px,6.5vw,34px); }
+      .s-title { font-size:clamp(31px,8.6vw,40px); }
       .s-desc { margin-bottom:32px; }
 
       .sobre-text-box { padding:22px; }
@@ -571,7 +643,7 @@
       .testi-grid { grid-template-columns:1fr; }
 
       .funciona-item { padding:16px 18px; gap:14px; }
-      .funciona-item .funciona-text h3 { font-size:15px; }
+      .funciona-item .funciona-text h3 { font-size:19px; }
       .funciona-item .funciona-text p { font-size:13.5px; }
 
       .modal-grid { grid-template-columns:1fr; gap:16px; }
@@ -582,7 +654,7 @@
       .local-info { padding:24px; }
 
       .cta-final { padding:40px 20px; }
-      .cta-final h2 { font-size:clamp(22px,6vw,30px); }
+      .cta-final h2 { font-size:clamp(28px,7.6vw,36px); }
 
       .footer-inner { flex-direction:column; gap:20px; }
       .footer-links { margin-left:0; }
@@ -597,13 +669,13 @@
       .a11y-panel { left:16px; right:16px; width:auto; bottom:78px; }
       .footer-bottom { padding-bottom:84px; }
 
-      .progress-title { font-size:14px; }
-      .progress-period { font-size:10px; }
+      .progress-title { font-size:18px; }
+      .progress-period { font-size:12.5px; }
     }
 
     @media(max-width:400px) {
-      .hero-title { font-size:28px; }
-      .s-title { font-size:22px; }
+      .hero-title { font-size:38px; }
+      .s-title { font-size:30px; }
       .nav-cta::after { content:""; }
     }
   </style>
@@ -674,7 +746,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-photo-floating">
-      <img src="images/daniela-avatar.webp" width="96" height="96" alt="Daniela da Silva Soares" fetchpriority="high" />
+      <img src="images/daniela-avatar.webp" width="128" height="128" alt="Daniela da Silva Soares" fetchpriority="high" />
     </div>
     <p class="hero-eyebrow">Psicóloga Clínica</p>
     <h1 class="hero-title">Olá, sou a<br/>Daniela Soares</h1>
@@ -766,53 +838,53 @@
       <h2 class="s-title">Como funciona</h2>
       <p class="s-desc">O atendimento, online ou presencial, oferece a mesma qualidade e o mesmo rigor ético — sempre pensado para o seu cuidado.</p>
     </div>
-    <div class="steps-grid">
-      <div class="glass step-card reveal reveal-delay-1">
-        <div class="step-num">1</div>
+    <ol class="steps">
+      <li class="step reveal reveal-delay-1">
+        <span class="step-n" aria-hidden="true">1</span>
         <h3>Agendamento pelo WhatsApp</h3>
         <p>Envie uma mensagem contando brevemente sua necessidade. A partir disso, combinamos o melhor horário e formato de atendimento: presencial ou on-line.</p>
-      </div>
-      <div class="glass step-card reveal reveal-delay-2">
-        <div class="step-num">2</div>
+      </li>
+      <li class="step reveal reveal-delay-2">
+        <span class="step-n" aria-hidden="true">2</span>
         <h3>Primeira sessão</h3>
         <p>Realizamos um encontro inicial para compreender sua demanda, conhecer sua história e definir juntos os objetivos do processo terapêutico.</p>
-      </div>
-      <div class="glass step-card reveal reveal-delay-3">
-        <div class="step-num">3</div>
+      </li>
+      <li class="step reveal reveal-delay-3">
+        <span class="step-n" aria-hidden="true">3</span>
         <h3>Acompanhamento contínuo</h3>
         <p>As sessões acontecem de forma regular, com intervenções personalizadas, sigilo profissional e foco no desenvolvimento emocional e na qualidade de vida.</p>
-      </div>
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ===== DEPOIMENTOS (avaliações reais do Google) ===== -->
-<section class="section" id="depoimentos">
+<section class="section band" id="depoimentos">
   <div class="container">
     <div class="reveal">
       <div class="s-label">Depoimentos</div>
       <h2 class="s-title">O que dizem sobre o atendimento</h2>
       <p class="s-desc">Avaliações reais de pacientes no Google.</p>
     </div>
-    <div class="testi-grid">
-      <div class="glass testi-card reveal reveal-delay-1">
+    <div class="testi-wrap">
+      <figure class="testi-feat reveal reveal-delay-1">
         <div class="testi-stars" role="img" aria-label="5 de 5 estrelas"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
-        <p class="testi-text">"Eu faço terapia com a Dani há quatro anos e posso dizer que mudou minha vida, ela despertou uma força em mim... que nem eu conhecia... fez eu brilhar de dentro para fora, acreditando no meu potencial... aprendi a me posicionar. E aprendi a controlar minhas emoções. Sou muito grata a Dani por minha evolução."</p>
-        <div class="testi-author"><div class="testi-avatar" aria-hidden="true">K</div><div><div class="testi-name">Kethylyn Costa</div><div class="testi-role">Avaliação no Google · 7 avaliações</div></div></div>
+        <blockquote class="testi-text">Eu faço terapia com a Dani há quatro anos e posso dizer que mudou minha vida, ela despertou uma força em mim... que nem eu conhecia... fez eu brilhar de dentro para fora, acreditando no meu potencial... aprendi a me posicionar. E aprendi a controlar minhas emoções. Sou muito grata a Dani por minha evolução.</blockquote>
+        <figcaption class="testi-author"><div class="testi-avatar" aria-hidden="true">K</div><div><div class="testi-name">Kethylyn Costa</div><div class="testi-role">Avaliação no Google · 7 avaliações</div></div></figcaption>
+      </figure>
+      <div class="testi-side">
+        <figure class="testi-mini reveal reveal-delay-2">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrelas"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <blockquote class="testi-text">"Dra. Daniela é incrível. Atenciosa e prestativa. Tem ajudado muito pelo filho na fase do seu desenvolvimento (transição para adolescência). Super recomendo."</blockquote>
+          <figcaption class="testi-author"><div class="testi-avatar" aria-hidden="true">L</div><div><div class="testi-name">Leia</div><div class="testi-role">Avaliação no Google · 3 avaliações</div></div></figcaption>
+        </figure>
+        <figure class="testi-mini reveal reveal-delay-3">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrelas"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <blockquote class="testi-text">"Trabalhamos com a Dani com orientação para nossa filha adolescente e o crescimento dela é excepcional... Dani trouxe muito clareza de como lidar com suas emoções nesta idade... ela é muito calma, paciente... Obrigada."</blockquote>
+          <figcaption class="testi-author"><div class="testi-avatar" aria-hidden="true">S</div><div><div class="testi-name">Sandra Oliveira</div><div class="testi-role">Avaliação no Google · 2 avaliações</div></div></figcaption>
+        </figure>
+        <a href="https://g.page/r/CW3vpsF_PQlxEAE/review" target="_blank" rel="noopener" class="btn-link reveal">Ver mais avaliações no Google →</a>
       </div>
-      <div class="glass testi-card reveal reveal-delay-2">
-        <div class="testi-stars" role="img" aria-label="5 de 5 estrelas"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
-        <p class="testi-text">"Dra. Daniela é incrível. Atenciosa e prestativa. Tem ajudado muito pelo filho na fase do seu desenvolvimento (transição para adolescência). Super recomendo."</p>
-        <div class="testi-author"><div class="testi-avatar" aria-hidden="true">L</div><div><div class="testi-name">Leia</div><div class="testi-role">Avaliação no Google · 3 avaliações</div></div></div>
-      </div>
-      <div class="glass testi-card reveal reveal-delay-3">
-        <div class="testi-stars" role="img" aria-label="5 de 5 estrelas"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></div>
-        <p class="testi-text">"Trabalhamos com a Dani com orientação para nossa filha adolescente e o crescimento dela é excepcional... Dani trouxe muito clareza de como lidar com suas emoções nesta idade... ela é muito calma, paciente... Obrigada."</p>
-        <div class="testi-author"><div class="testi-avatar" aria-hidden="true">S</div><div><div class="testi-name">Sandra Oliveira</div><div class="testi-role">Avaliação no Google · 2 avaliações</div></div></div>
-      </div>
-    </div>
-    <div class="reveal center" style="margin-top:32px">
-      <a href="https://g.page/r/CW3vpsF_PQlxEAE/review" target="_blank" rel="noopener" class="btn-link">Ver mais avaliações no Google →</a>
     </div>
   </div>
 </section>
@@ -824,24 +896,24 @@
       <div class="s-label">Dúvidas frequentes</div>
       <h2 class="s-title">Perguntas frequentes</h2>
     </div>
-    <div class="faq-list">
-      <div class="glass faq-item reveal reveal-delay-1">
+    <div class="faq-panel reveal">
+      <div class="faq-item">
         <h3 class="faq-h"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-1"><span class="faq-qt">O atendimento online tem o mesmo efeito do presencial?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
         <div class="faq-a" id="faq-1" role="region">Sim! Para adultos e adolescentes, os atendimentos online têm o mesmo efeito dos presenciais, pois a eficácia de um processo psicoterapêutico é baseada na relação entre psicólogo e paciente, não no espaço físico.</div>
       </div>
-      <div class="glass faq-item reveal reveal-delay-2">
+      <div class="faq-item">
         <h3 class="faq-h"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-2"><span class="faq-qt">Como funciona o sigilo profissional?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
         <div class="faq-a" id="faq-2" role="region">Todo o atendimento segue o código de ética profissional da Psicologia. Tudo o que é compartilhado durante as sessões é estritamente confidencial.</div>
       </div>
-      <div class="glass faq-item reveal reveal-delay-3">
+      <div class="faq-item">
         <h3 class="faq-h"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-3"><span class="faq-qt">E se eu não souber como começar a falar sobre meus sentimentos?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
         <div class="faq-a" id="faq-3" role="region">Não se preocupe! Você não precisa ir direto ao ponto. Desde o início você pode se familiarizar no seu próprio ritmo, e eu vou te auxiliar com escuta e técnicas para esse processo.</div>
       </div>
-      <div class="glass faq-item reveal reveal-delay-4">
+      <div class="faq-item">
         <h3 class="faq-h"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-4"><span class="faq-qt">Posso usar o reembolso do meu plano de saúde?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
         <div class="faq-a" id="faq-4" role="region">As sessões são particulares. No entanto, posso emitir recibo para que você solicite reembolso junto ao seu convênio, conforme as regras do seu plano.</div>
       </div>
-      <div class="glass faq-item reveal reveal-delay-5">
+      <div class="faq-item">
         <h3 class="faq-h"><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-5"><span class="faq-qt">Como faço para agendar minha primeira sessão?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
         <div class="faq-a" id="faq-5" role="region">É simples! Basta clicar no botão de WhatsApp e me enviar uma mensagem. Vamos conversar sobre o que te trouxe até aqui e encontrar o melhor horário para você.</div>
       </div>
@@ -850,43 +922,44 @@
 </section>
 
 <!-- ===== COMO FUNCIONA — lista ícones ===== -->
-<section class="section" id="como-funciona-2" style="padding-top:0">
+<section class="section" id="como-funciona-2">
   <div class="container">
-    <div class="reveal center" style="margin-bottom:40px">
+    <div class="abord-wrap">
+    <div class="abord-head reveal">
       <div class="s-label">Abordagem</div>
       <h2 class="s-title">Como funciona o processo?</h2>
-      <p class="s-desc center">Cada atendimento é conduzido de forma individualizada, respeitando sua história, suas necessidades e seus objetivos. O processo terapêutico é construído em parceria, com acolhimento, ética e estratégias baseadas em evidências científicas para promover saúde mental e qualidade de vida.</p>
+      <p class="s-desc">Cada atendimento é conduzido de forma individualizada, respeitando sua história, suas necessidades e seus objetivos. O processo terapêutico é construído em parceria, com acolhimento, ética e estratégias baseadas em evidências científicas para promover saúde mental e qualidade de vida.</p>
     </div>
     <div class="funciona-list">
-      <div class="glass funciona-item reveal reveal-delay-1">
+      <div class="funciona-item reveal reveal-delay-1">
         <div class="funciona-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
         <div class="funciona-text">
           <h3>Escuta acolhedora e sem julgamentos</h3>
           <p>Um espaço seguro para que você possa falar sobre suas experiências, emoções e desafios com respeito, empatia e sigilo profissional.</p>
         </div>
       </div>
-      <div class="glass funciona-item reveal reveal-delay-2">
+      <div class="funciona-item reveal reveal-delay-2">
         <div class="funciona-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
         <div class="funciona-text">
           <h3>Avaliação e compreensão da demanda</h3>
           <p>Identificamos os fatores emocionais, cognitivos e comportamentais envolvidos, construindo uma compreensão clara das dificuldades e dos objetivos terapêuticos.</p>
         </div>
       </div>
-      <div class="glass funciona-item reveal reveal-delay-3">
+      <div class="funciona-item reveal reveal-delay-3">
         <div class="funciona-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
         <div class="funciona-text">
           <h3>Intervenções baseadas em evidências</h3>
           <p>Utilizamos estratégias da Terapia Cognitivo-Comportamental (TCC) e outras abordagens fundamentadas cientificamente, sempre adaptadas às necessidades de cada paciente.</p>
         </div>
       </div>
-      <div class="glass funciona-item reveal reveal-delay-4">
+      <div class="funciona-item reveal reveal-delay-4">
         <div class="funciona-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="funciona-text">
           <h3>Desenvolvimento de habilidades e autonomia</h3>
           <p>O objetivo da terapia é fortalecer recursos emocionais, desenvolver estratégias de enfrentamento e promover mudanças consistentes para uma vida mais equilibrada e saudável.</p>
         </div>
       </div>
-      <div class="glass funciona-item reveal reveal-delay-5">
+      <div class="funciona-item reveal reveal-delay-5">
         <div class="funciona-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
         <div class="funciona-text">
           <h3>Desenvolvimento de autoconhecimento</h3>
@@ -894,6 +967,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -1043,6 +1117,7 @@
       <a href="https://youtube.com/@danielasoares-psicologa1225?si=OJ13JuAiOyWw71mv" target="_blank" rel="noopener">YouTube</a>
       <a href="https://g.page/r/CW3vpsF_PQlxEAE/review" target="_blank" rel="noopener">Google Meu Negócio</a>
     </nav>
+    <div class="footer-social">
     <a href="https://wa.me/5511947085492?text=Ol%C3%A1%2C%20Daniela%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="footer-wa">
       <svg width="20" height="20" aria-hidden="true"><use href="#i-wa"/></svg>
       (11) 94708-5492
@@ -1051,13 +1126,11 @@
       <svg class="ic" style="width:20px;height:20px" aria-hidden="true"><use href="#i-insta"/></svg>
       @daniela_psicoterapia
     </a>
+    </div>
   </div>
   <div class="footer-bottom"><p>© <span id="ano">2026</span> Daniela da Silva Soares — Psicóloga<span data-crp data-sep=" · " hidden></span> · Atendimento Online e Presencial · Todos os direitos reservados.</p></div>
 </footer>
 
-<a href="https://www.instagram.com/daniela_psicoterapia/" target="_blank" rel="noopener" class="wa-float insta" title="Instagram" aria-label="Instagram @daniela_psicoterapia">
-  <svg class="ic" style="width:26px;height:26px" aria-hidden="true"><use href="#i-insta"/></svg>
-</a>
 <a href="https://wa.me/5511947085492?text=Ol%C3%A1%2C%20Daniela%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="wa-float" title="WhatsApp" aria-label="Conversar no WhatsApp">
   <svg width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
