@@ -643,6 +643,84 @@
       .testi-feat::before { font-size:130px; top:-22px; }
     }
 
+
+    /* ============ 2. ENTRADA DO TOPO (uma animação só) ============ */
+    .hero-title .hl { display:block; overflow:hidden; padding-bottom:.06em; margin-bottom:-.06em; }
+    .hero-title .hl > span { display:block; }
+    @keyframes heroUp { from { transform:translateY(105%); } to { transform:none; } }
+    @keyframes heroFade { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+    @keyframes heroPhoto { from { opacity:0; transform:scale(.9); } to { opacity:1; transform:none; } }
+    .hero-photo-floating { animation:heroPhoto .9s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-eyebrow { animation:heroFade .7s .25s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-title .hl > span { animation:heroUp .9s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-title .hl:nth-child(1) > span { animation-delay:.35s; }
+    .hero-title .hl:nth-child(2) > span { animation-delay:.48s; }
+    .hero-meta, .hero-crp { animation:heroFade .7s .75s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-sub { animation:heroFade .7s .85s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-actions { animation:heroFade .7s .95s cubic-bezier(.2,.7,.2,1) both; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-photo-floating, .hero-eyebrow, .hero-title .hl > span, .hero-meta, .hero-crp, .hero-sub, .hero-actions { animation:none; }
+    }
+
+    /* ============ 4. TRANSIÇÃO CARD -> PÁGINA ============ */
+    ::view-transition-group(vt-card) { animation-duration:.5s; animation-timing-function:cubic-bezier(.4,0,.2,1); }
+    ::view-transition-old(vt-card), ::view-transition-new(vt-card) { height:100%; object-fit:cover; overflow:hidden; }
+    ::view-transition-group(root) { animation-duration:.35s; }
+    html.vt-on .detail-overlay { transition:none !important; }
+
+    /* ============ 5. MAPA LEVE (carrega só ao tocar) ============ */
+    .map-facade {
+      all:unset; box-sizing:border-box; cursor:pointer; position:relative; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:14px; width:100%; height:100%; min-height:340px; text-align:center;
+      background:var(--mint); overflow:hidden; border-radius:var(--r2);
+    }
+    .map-facade:focus-visible { outline:3px solid var(--sage); outline-offset:3px; }
+    .map-facade .map-art { position:absolute; inset:0; width:100%; height:100%; color:rgba(0,107,58,.16); }
+    .map-pin {
+      position:relative; width:64px; height:64px; border-radius:50% 50% 50% 0; transform:rotate(-45deg);
+      background:var(--forest); box-shadow:0 14px 28px -12px rgba(15,61,42,.6); display:grid; place-items:center;
+    }
+    .map-pin::after { content:""; width:20px; height:20px; border-radius:50%; background:#9FD9B8; }
+    .map-cta {
+      position:relative; display:inline-flex; align-items:center; gap:8px; margin-top:6px;
+      background:#fff; color:var(--sage-dk); font:600 14px "Inter",sans-serif; padding:11px 20px; border-radius:100px;
+      box-shadow:0 8px 20px -10px rgba(15,61,42,.35); transition:transform .2s;
+    }
+    .map-facade:hover .map-cta { transform:translateY(-2px); }
+    .map-label { position:relative; font-family:var(--serif); font-size:20px; font-weight:600; color:var(--forest); }
+
+    /* ============ 3. BARRA DE AGENDAR (celular) ============ */
+    .m-cta { display:none; }
+    @media(max-width:600px) {
+      .m-cta {
+        display:flex; position:fixed; left:76px; right:16px; bottom:calc(20px + env(safe-area-inset-bottom,0px)); z-index:1999;
+        height:50px; align-items:center; justify-content:center; gap:10px; border-radius:100px; text-decoration:none;
+        background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%); color:#fff; font:600 15px "Inter",sans-serif;
+        box-shadow:0 14px 30px -12px rgba(15,61,42,.6);
+        transform:translateY(160%); transition:transform .4s cubic-bezier(.2,.7,.2,1);
+      }
+      .m-cta svg { width:20px; height:20px; }
+      html.m-cta-on .m-cta { transform:none; }
+      .wa-float { display:none !important; }
+      .a11y-btn { transition:transform .3s ease, bottom .3s ease; }
+    }
+
+    /* ============ 1. ÁREAS EM CARROSSEL (celular) ============ */
+    .areas-dots { display:none; }
+    @media(max-width:600px) {
+      .areas-grid {
+        display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:14px;
+        margin:0 -20px; padding:6px 20px 22px; scroll-padding:0 20px; scrollbar-width:none; -webkit-overflow-scrolling:touch;
+      }
+      .areas-grid::-webkit-scrollbar { display:none; }
+      .areas-grid .area-card { flex:0 0 84%; scroll-snap-align:start; }
+      .js .areas-grid .reveal { opacity:1; transform:none; }
+      .areas-dots { display:flex; justify-content:center; gap:8px; margin-top:4px; }
+      .areas-dots button { all:unset; cursor:pointer; width:8px; height:8px; border-radius:100px; background:rgba(0,107,58,.22); transition:width .3s, background .3s; }
+      .areas-dots button[aria-current="true"] { width:24px; background:var(--sage-dk); }
+      .areas-dots button:focus-visible { outline:2px solid var(--sage); outline-offset:3px; }
+    }
+
     /* ============ MOBILE FIXES ============ */
     @media(max-width:600px) {
       .bg-fixed { display:none !important; }
@@ -669,7 +747,6 @@
 
       .sobre-text-box { padding:22px; }
 
-      .areas-grid { grid-template-columns:1fr; }
 
       .steps-grid { grid-template-columns:1fr; gap:16px; }
 
@@ -781,7 +858,7 @@
       <img src="images/daniela-avatar.webp" width="128" height="128" alt="Daniela da Silva Soares" fetchpriority="high" />
     </div>
     <p class="hero-eyebrow">Psicóloga Clínica</p>
-    <h1 class="hero-title">Olá, sou a<br/>Daniela Soares</h1>
+    <h1 class="hero-title"><span class="hl"><span>Olá, sou a</span></span><span class="hl"><span>Daniela Soares</span></span></h1>
     <p class="hero-meta">Psicóloga | Neuropsicóloga | Atendimento Online | Presencial</p>
     <p class="hero-crp" data-crp hidden></p>
     <p class="hero-sub">Dedicada a oferecer um espaço acolhedor, ético e seguro para o seu cuidado emocional.</p>
@@ -859,6 +936,7 @@
         <a class="btn-link" href="#area-orientacao-parental" aria-label="Saiba mais sobre Orientação Parental">Saiba mais →</a>
       </div>
     </div>
+    <div class="areas-dots" id="areasDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -1041,7 +1119,19 @@
     </div>
     <div class="local-wrap reveal reveal-delay-1">
       <div class="local-map">
-        <iframe src="https://maps.google.com/maps?q=-23.497385,-46.8491691&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização do consultório"></iframe>
+        <button class="map-facade" type="button" id="mapFacade" data-src="https://maps.google.com/maps?q=-23.497385,-46.8491691&amp;z=17&amp;output=embed" aria-label="Carregar o mapa do consultório">
+          <svg class="map-art" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M-20 70 C 80 90, 160 40, 260 80 S 420 120, 440 90" stroke-width="14"/>
+            <path d="M-20 250 C 90 220, 170 290, 280 250 S 400 200, 440 230" stroke-width="10"/>
+            <path d="M120 -20 C 140 90, 90 200, 140 360" stroke-width="10"/>
+            <path d="M300 -20 C 280 100, 330 210, 290 360" stroke-width="16"/>
+            <path d="M-20 160 H 440" stroke-width="5"/><path d="M210 -20 V 360" stroke-width="5"/>
+            <path d="M40 -20 V 360 M360 -20 V 360 M-20 30 H 440 M-20 310 H 440" stroke-width="2.5"/>
+          </svg>
+          <span class="map-pin" aria-hidden="true"></span>
+          <span class="map-label">Alameda Rio Negro, 967</span>
+          <span class="map-cta"><svg class="ic" style="width:16px;height:16px" aria-hidden="true"><use href="#i-pin"/></svg>Ver mapa aqui</span>
+        </button>
       </div>
       <div class="glass local-info">
         <h3>Clínica de Psicologia Alpha Equilíbrio</h3>
@@ -1167,6 +1257,9 @@
   <svg width="28" height="28" aria-hidden="true"><use href="#i-wa"/></svg>
 </a>
 
+<a href="https://wa.me/5511947085492?text=Ol%C3%A1%2C%20Daniela%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="m-cta" id="mCta" tabindex="-1" aria-hidden="true">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar consulta
+</a>
 <!-- ===== ACESSIBILIDADE ===== -->
 <button class="a11y-btn" id="a11yBtn" type="button" aria-label="Opções de acessibilidade" aria-expanded="false" aria-controls="a11yPanel">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.6" r="1.4"/><path d="M6.5 9.2l5.5 1.2 5.5-1.2M12 10.4v3.6M12 14l-2.4 4.4M12 14l2.4 4.4"/></svg>
@@ -1399,12 +1492,23 @@ var CRP = "";
   var $$ = function(s,c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
 
   /* Menu some ao descer e volta ao subir (sem travar a rolagem) */
-  var nb = $('#navbar'), lastY = 0, ticking = false;
+  var nb = $('#navbar'), lastY = 0, ticking = false, heroH = 0, mcta = $('#mCta'), footVis = false;
   function onScroll(){
     var y = window.scrollY;
+    if (!heroH) heroH = $('#home').offsetHeight;
     nb.classList.toggle('scrolled', y > 30);
     nb.classList.toggle('hidden', y > lastY && y > 120);
+    /* Barra "Agendar consulta" no celular: aparece depois do topo e some no rodapé */
+    var on = y > heroH * 0.75 && !footVis;
+    if (on !== document.documentElement.classList.contains('m-cta-on')) {
+      document.documentElement.classList.toggle('m-cta-on', on);
+      mcta.setAttribute('aria-hidden', on ? 'false' : 'true'); mcta.tabIndex = on ? 0 : -1;
+    }
     lastY = y; ticking = false;
+  }
+  window.addEventListener('resize', function(){ heroH = 0; }, { passive:true });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ footVis = en[0].isIntersecting; onScroll(); }).observe($('.footer'));
   }
   window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive:true });
 
@@ -1419,6 +1523,32 @@ var CRP = "";
     }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
     $$('.reveal').forEach(function(el){ io.observe(el); });
   } else { $$('.reveal').forEach(function(el){ el.classList.add('visible'); }); }
+
+  /* Carrossel das áreas (celular): pontinhos acompanham o card */
+  var grid = $('.areas-grid'), dots = $('#areasDots'), cards = $$('.area-card', grid);
+  cards.forEach(function(c, i){
+    var b = document.createElement('button'); b.type = 'button'; b.tabIndex = -1;
+    b.addEventListener('click', function(){ grid.scrollTo({ left: c.offsetLeft - grid.offsetLeft - 20, behavior:'smooth' }); });
+    dots.appendChild(b);
+  });
+  var dotBtns = $$('button', dots), dotTick = false;
+  function syncDots(){
+    var mid = grid.scrollLeft + grid.clientWidth / 2, best = 0, bd = 1e9;
+    cards.forEach(function(c, i){ var d = Math.abs(c.offsetLeft - grid.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+    dotBtns.forEach(function(b, i){ b.setAttribute('aria-current', i === best ? 'true' : 'false'); });
+    dotTick = false;
+  }
+  grid.addEventListener('scroll', function(){ if (!dotTick) { dotTick = true; requestAnimationFrame(syncDots); } }, { passive:true });
+  requestAnimationFrame(syncDots);
+
+  /* Mapa leve: o do Google só carrega quando a pessoa toca */
+  var mf = $('#mapFacade');
+  if (mf) mf.addEventListener('click', function(){
+    var f = document.createElement('iframe');
+    f.src = mf.dataset.src; f.title = 'Mapa da localização do consultório'; f.allowFullscreen = true;
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    mf.replaceWith(f); f.focus();
+  });
 
   /* FAQ */
   $$('.faq-q').forEach(function(btn){
@@ -1442,10 +1572,43 @@ var CRP = "";
   }
   function closeOverlay(e){
     if (!current) return;
-    if (openedHere) { if (e) e.preventDefault(); history.back(); }
+    if (openedHere) {
+      if (e) e.preventDefault();
+      var ov = current, card = vtCard && document.body.contains(vtCard) && ov.dataset.route.indexOf('area-') === 0 ? vtCard : null;
+      if (card && vtOK()) {
+        ov.style.viewTransitionName = 'vt-card';
+        document.documentElement.classList.add('vt-on');
+        var t = document.startViewTransition(function(){
+          return new Promise(function(res){
+            window.addEventListener('hashchange', function(){ ov.style.viewTransitionName = ''; card.style.viewTransitionName = 'vt-card'; res(); }, { once:true });
+            history.back();
+          });
+        });
+        t.finished.finally(function(){ card.style.viewTransitionName = ''; document.documentElement.classList.remove('vt-on'); });
+      } else { history.back(); }
+    }
     else if (!e) { location.hash = current.dataset.back; }
   }
   window.addEventListener('hashchange', function(){ openedHere = !!$('.detail-overlay[data-route="'+location.hash.slice(1)+'"]'); route(); });
+
+  /* Ao tocar em "Saiba mais", o card se expande e vira a página (Chrome/Safari novos) */
+  var vtOK = function(){ return !!document.startViewTransition && !document.documentElement.classList.contains('a11y-calm') && !matchMedia('(prefers-reduced-motion: reduce)').matches; };
+  var vtCard = null;
+  $$('.area-card a[href^="#area-"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (!vtOK()) return;
+      e.preventDefault();
+      var h = a.getAttribute('href').slice(1), ov = $('.detail-overlay[data-route="'+h+'"]'), card = a.closest('.area-card');
+      if (!ov) return;
+      vtCard = card; card.style.viewTransitionName = 'vt-card';
+      document.documentElement.classList.add('vt-on');
+      var t = document.startViewTransition(function(){
+        card.style.viewTransitionName = ''; ov.style.viewTransitionName = 'vt-card';
+        history.pushState(null, '', '#' + h); openedHere = true; route();
+      });
+      t.finished.finally(function(){ ov.style.viewTransitionName = ''; document.documentElement.classList.remove('vt-on'); });
+    });
+  });
   $$('.detail-back').forEach(function(a){ a.addEventListener('click', closeOverlay); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && document.getElementById('a11yPanel').hidden) closeOverlay(); });
   route();
