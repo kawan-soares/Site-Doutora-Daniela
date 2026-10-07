@@ -759,13 +759,14 @@
     .team-faces { display:flex; flex-shrink:0; }
     .team-faces img { width:104px; height:104px; object-fit:cover; border-radius:22px; border:4px solid var(--bg); box-shadow:0 14px 30px -16px rgba(15,61,42,.55); }
     .team-faces img + img { margin-left:-22px; }
-    .team-faces img:nth-child(2) { transform:translateY(-10px); }
+    .team-faces { align-items:center; }
+    .team-faces img.lead-face { position:relative; z-index:1; width:128px; height:128px; border-radius:26px; }
     .team-teaser-txt { flex:1; }
     .team-teaser-txt .s-title { margin-bottom:8px; }
     .team-teaser-txt p { font-size:15.5px; color:var(--ink-soft); line-height:1.7; max-width:46ch; }
     .team-teaser .btn-primary { flex-shrink:0; pointer-events:none; }
     @media(max-width:980px){ .team-teaser { flex-wrap:wrap; gap:24px; } .team-teaser .btn-primary { width:100%; justify-content:center; } }
-    @media(max-width:600px){ .team-teaser { padding:26px 22px; } .team-faces img { width:84px; height:84px; border-radius:18px; } }
+    @media(max-width:600px){ .team-teaser { padding:26px 22px; } .team-faces img { width:80px; height:80px; border-radius:18px; } .team-faces img.lead-face { width:104px; height:104px; border-radius:22px; } }
 
     /* ============ EQUIPE: PÁGINA COMPLETA ============ */
     .team-full { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:20px; }
@@ -1171,8 +1172,8 @@
   <div class="container">
     <a class="glass team-teaser reveal" href="#equipe" aria-label="Conheça a equipe da clínica">
       <span class="team-faces" aria-hidden="true">
-        <img src="images/equipe-daniela.webp" width="104" height="104" alt="" loading="lazy" decoding="async">
         <img src="images/equipe-hevellyn.webp" width="104" height="104" alt="" loading="lazy" decoding="async">
+        <img src="images/equipe-daniela.webp" width="104" height="104" alt="" class="lead-face" loading="lazy" decoding="async">
         <img src="images/equipe-kawan.webp" width="104" height="104" alt="" loading="lazy" decoding="async">
       </span>
       <span class="team-teaser-txt">
