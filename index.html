@@ -766,7 +766,7 @@
     .team-teaser-txt p { font-size:15.5px; color:var(--ink-soft); line-height:1.7; max-width:46ch; }
     .team-teaser .btn-primary { flex-shrink:0; pointer-events:none; }
     @media(max-width:980px){ .team-teaser { flex-wrap:wrap; gap:24px; } .team-teaser .btn-primary { width:100%; justify-content:center; } }
-    @media(max-width:600px){ .team-teaser { padding:26px 22px; } .team-faces img { width:80px; height:80px; border-radius:18px; } .team-faces img.lead-face { width:104px; height:104px; border-radius:22px; } }
+    @media(max-width:600px){ .team-teaser { padding:26px 22px; flex-direction:column; align-items:flex-start; } .team-faces img { width:80px; height:80px; border-radius:18px; } .team-faces img.lead-face { width:104px; height:104px; border-radius:22px; } }
 
     /* ============ EQUIPE: PÁGINA COMPLETA ============ */
     .team-full { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:20px; }
@@ -778,6 +778,34 @@
     .tm-role { font-size:15px; font-weight:600; color:var(--sage-dk); margin-bottom:12px; }
     .tm p { font-size:15.5px; color:var(--ink-soft); line-height:1.8; margin-bottom:10px; }
     @media(max-width:600px){ .tm, .detail-body .team-full li.tm { grid-template-columns:1fr; gap:16px; padding:18px; } .tm img { max-width:none; } }
+
+
+    /* ============ PROFISSIONAIS PARCEIROS ============ */
+    .pp-list { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:24px; }
+    .detail-body .pp-list li.pp { padding:28px; margin:0; }
+    .detail-body .pp-list li.pp::before { content:none; }
+    .pp-top { display:grid; grid-template-columns:180px 1fr; gap:26px; align-items:center; margin-bottom:22px; }
+    .pp-top img { width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; border-radius:20px; display:block; }
+    .detail-body .pp h3 { font-family:var(--serif); font-size:30px; font-weight:600; color:var(--ink); line-height:1.12; margin:0 0 6px; }
+    .pp-crp { font-size:15px; font-weight:600; color:var(--sage-dk); }
+    .pp-info { display:grid; grid-template-columns:repeat(2,1fr); gap:0; margin:0 0 20px; border-top:1px solid var(--rule); }
+    .pp-info div { padding:14px 16px 14px 0; border-bottom:1px solid var(--rule); }
+    .pp-info div:nth-child(odd) { padding-right:20px; }
+    .pp-info dt { font-size:13px; font-weight:600; color:var(--sage-dk); margin-bottom:3px; }
+    .pp-info dd { margin:0; font-size:15px; color:var(--ink); line-height:1.55; }
+    .pp-info .wide { grid-column:1 / -1; }
+    .detail-body .pp p.pp-bio { font-size:15.5px; line-height:1.8; margin-bottom:16px; }
+    .pp-tags { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; padding:0; list-style:none; }
+    .detail-body .pp-tags li { margin:0; padding:7px 13px; border-radius:100px; background:var(--mint); color:var(--sage-deep); font-size:13.5px; font-weight:500; line-height:1.2; }
+    .detail-body .pp-tags li::before { content:none; }
+    .pp .btn-primary .ic-wa { width:18px; height:18px; }
+    @media(max-width:600px){
+      .detail-body .pp-list li.pp { padding:20px; }
+      .pp-top { grid-template-columns:96px 1fr; gap:16px; }
+      .detail-body .pp h3 { font-size:24px; }
+      .pp-info { grid-template-columns:1fr; }
+      .pp .btn-primary { width:100%; justify-content:center; }
+    }
 
     /* ============ MOBILE FIXES ============ */
     @media(max-width:600px) {
@@ -1186,6 +1214,21 @@
   </div>
 </section>
 
+<!-- ===== PROFISSIONAIS PARCEIROS (prévia — a página completa abre em #parceiros) ===== -->
+<section class="section" id="rede" style="padding-top:0">
+  <div class="container">
+    <a class="glass team-teaser reveal" href="#parceiros" aria-label="Conheça os profissionais parceiros">
+      <span class="team-faces" id="ppFaces" aria-hidden="true"></span>
+      <span class="team-teaser-txt">
+        <span class="s-label" style="display:block">Profissionais parceiros</span>
+        <span class="s-title" style="display:block">Atendimento em parceria</span>
+        <p>Profissionais que atendem em parceria com a Alpha Equilíbrio, cada um com sua especialidade e forma de atendimento.</p>
+      </span>
+      <span class="btn-primary">Conheça os parceiros <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
+
 <!-- ===== LOCALIZAÇÃO ===== -->
 <section class="section" id="localizacao">
   <div class="container">
@@ -1317,6 +1360,7 @@
       <a href="#areas">Áreas de atuação</a>
       <a href="#modalidades">Como funciona</a>
       <a href="#equipe">Equipe</a>
+      <a href="#parceiros">Profissionais parceiros</a>
       <a href="#localizacao">Localização</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#faq">FAQ</a>
@@ -1392,6 +1436,18 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ===== SUBPÁGINAS (abrem pelo link, ex.: #area-ansiedade) ===== -->
+<div class="detail-overlay" id="detail-parceiros" data-route="parceiros" data-back="#rede" role="dialog" aria-modal="true" aria-labelledby="h-parceiros">
+  <div class="detail-close-bar"><div class="container"><a class="detail-back" href="#rede"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Voltar</a><span class="detail-title-bar">Parceiros</span><span style="width:70px"></span></div></div>
+  <div class="detail-inner">
+    <p class="detail-eyebrow">Profissionais parceiros</p>
+    <h2 class="detail-h1" id="h-parceiros" tabindex="-1">Atendimento em parceria</h2>
+    <div class="detail-body">
+      <p>Profissionais que atendem em parceria com a Alpha Equilíbrio. Conheça a especialidade e a forma de atendimento de cada um e agende direto pelo WhatsApp.</p>
+      <ul class="pp-list" id="ppList"></ul>
+    </div>
+  </div>
+</div>
+
 <div class="detail-overlay" id="detail-equipe" data-route="equipe" data-back="#time" role="dialog" aria-modal="true" aria-labelledby="h-equipe">
   <div class="detail-close-bar"><div class="container"><a class="detail-back" href="#time"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>Voltar</a><span class="detail-title-bar">Equipe</span><span style="width:70px"></span></div></div>
   <div class="detail-inner">
@@ -1591,6 +1647,59 @@
   </div>
 </div>
 
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   PROFISSIONAIS PARCEIROS
+   Para incluir um novo profissional: copie um bloco { ... }, cole abaixo
+   do último (com uma vírgula entre eles), troque os dados e coloque a
+   foto quadrada na pasta images/. O site monta tudo sozinho.
+   whatsapp: só números com 55 + DDD. Vazio ("") usa o WhatsApp da clínica.
+   ════════════════════════════════════════════════════════════════════ */
+var PARCEIROS = [
+  {
+    foto: "images/parceiro-zuleide-ordonio.webp",
+    nome: "Zuleide Ordônio",
+    titulo: "Psicóloga",
+    crp: "123278",
+    formacao: "Psicologia (UNIP). Pós-graduação em Saúde Mental (Santa Casa de São Paulo). Especialização em Terapia Cognitivo-Comportamental (PUC-RS). Formação em Terapia dos Esquemas em andamento (CETCC).",
+    especialidade: "Saúde Mental e Terapia Cognitivo-Comportamental",
+    abordagem: "Terapia Cognitivo-Comportamental (TCC), integrada à Terapia dos Esquemas",
+    publico: "Adultos",
+    modalidade: "On-line",
+    apresentacao: "Psicóloga clínica desde 2014, atende adultos com foco em questões emocionais e relacionais. Seu trabalho busca compreender padrões emocionais e de comportamento e promover mudanças, com intervenções individualizadas para cada pessoa.",
+    areas: ["Ansiedade", "Depressão", "Autoestima", "Dependência emocional", "Relacionamentos abusivos", "Luto", "Exaustão mental"],
+    whatsapp: ""
+  }
+];
+</script>
+<script>
+(function(){
+  var CLINICA = "5511947085492";
+  var esc = function(t){ return String(t || "").replace(/[&<>"]/g, function(c){ return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]; }); };
+  var list = document.getElementById("ppList"), faces = document.getElementById("ppFaces");
+  var html = "", fhtml = "";
+  PARCEIROS.forEach(function(p, i){
+    var primeiro = p.nome.split(" ")[0];
+    var msg = encodeURIComponent("Olá! Vi o site da Alpha Equilíbrio e gostaria de agendar um atendimento com " + p.nome + ".");
+    var wa = "https://wa.me/" + (p.whatsapp || CLINICA) + "?text=" + msg;
+    var row = function(rot, val, wide){ return val ? '<div' + (wide ? ' class="wide"' : '') + '><dt>' + rot + '</dt><dd>' + esc(val) + '</dd></div>' : ''; };
+    html += '<li class="glass pp">'
+      + '<div class="pp-top"><img src="' + esc(p.foto) + '" width="800" height="800" alt="' + esc(p.nome) + '" loading="lazy" decoding="async">'
+      + '<div><h3>' + esc(p.nome) + '</h3><div class="pp-crp">' + esc(p.titulo || "Psicóloga") + (p.crp ? ' · CRP ' + esc(p.crp) : '') + '</div></div></div>'
+      + '<dl class="pp-info">'
+      + row("Formação", p.formacao, true) + row("Especialidade", p.especialidade) + row("Abordagem", p.abordagem)
+      + row("Público atendido", p.publico) + row("Modalidade", p.modalidade)
+      + '</dl>'
+      + (p.apresentacao ? '<p class="pp-bio">' + esc(p.apresentacao) + '</p>' : '')
+      + (p.areas && p.areas.length ? '<ul class="pp-tags" aria-label="Áreas de atuação">' + p.areas.map(function(a){ return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>' : '')
+      + '<a class="btn-primary" href="' + wa + '" target="_blank" rel="noopener"><svg class="ic-wa" aria-hidden="true"><use href="#i-wa"/></svg>Agendar com ' + esc(primeiro) + '</a>'
+      + '</li>';
+    if (i < 3) fhtml += '<img src="' + esc(p.foto) + '" width="104" height="104" alt="" loading="lazy" decoding="async"' + (i === 0 ? ' class="lead-face"' : '') + '>';
+  });
+  list.innerHTML = html; faces.innerHTML = fhtml;
+  if (!PARCEIROS.length) { var r = document.getElementById("rede"); if (r) r.hidden = true; }
+})();
+</script>
 <script>
 /* ════════════════════════════════════════════════
    CRP — coloque o número aqui (ex.: "06/123456").
