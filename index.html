@@ -151,6 +151,8 @@
     .nav.hidden { transform:translateY(-110%); }
     .nav-inner { max-width:1140px; margin:0 auto; display:flex; align-items:center; height:80px; gap:32px; }
     .logo-wrap { display:flex; align-items:center; gap:11px; text-decoration:none; flex-shrink:0; cursor:pointer; }
+    .logo-img { height:52px; width:auto; display:block; }
+    .logo-img-foot { height:64px; }
     .logo-mark {
       width:42px; height:42px; border-radius:13px;
       background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%);
@@ -819,6 +821,8 @@
       .nav-cta svg { display:block; }
       .nav-cta::after { content:"Agendar"; font-size:12px; font-weight:600; }
       .logo-text { font-size:16px; }
+      .logo-img { height:42px; }
+      .logo-img-foot { height:56px; }
 
       .hero { padding:120px 20px 70px; }
       .hero-photo-floating { width:104px; height:104px; }
@@ -911,11 +915,8 @@
 <!-- ===== NAV ===== -->
 <nav class="nav" id="navbar" aria-label="Menu principal">
   <div class="nav-inner">
-    <a class="logo-wrap" href="#home" aria-label="Daniela Soares — início">
-      <span class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M9.3 4H14.7V5.4H9.3V4Z"/><path d="M9.3 18.6H14.7V20H9.3V18.6Z"/><path d="M11.1 4.7H12.9V19.3H11.1V4.7Z"/><path d="M5 4.7H6.8C6.8 8.5 6.8 10.8 9 12.3C10 13 10.8 13.2 10.8 13.2L10.2 15.6C10.2 15.6 9 15.3 7.6 14.4C4.6 12.5 4.6 9.4 4.6 5L5 4.7Z"/><path d="M19 4.7H17.2C17.2 8.5 17.2 10.8 15 12.3C14 13 13.2 13.2 13.2 13.2L13.8 15.6C13.8 15.6 15 15.3 16.4 14.4C19.4 12.5 19.4 9.4 19.4 5L19 4.7Z"/><path d="M3 4H5.7V5.3H3V4Z"/><path d="M18.3 4H21V5.3H18.3V4Z"/></svg>
-      </span>
-      <span class="logo-text">Daniela Soares</span>
+    <a class="logo-wrap" href="#home" aria-label="Clínica de Psicologia Alpha Equilíbrio — início">
+      <img class="logo-img" src="images/logo-alpha.webp" width="211" height="112" alt="Alpha Equilíbrio">
     </a>
     <ul class="nav-links">
       <li><a href="#home">Início</a></li>
@@ -1346,8 +1347,7 @@
   <div class="container footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">
-        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M9.3 4H14.7V5.4H9.3V4Z"/><path d="M9.3 18.6H14.7V20H9.3V18.6Z"/><path d="M11.1 4.7H12.9V19.3H11.1V4.7Z"/><path d="M5 4.7H6.8C6.8 8.5 6.8 10.8 9 12.3C10 13 10.8 13.2 10.8 13.2L10.2 15.6C10.2 15.6 9 15.3 7.6 14.4C4.6 12.5 4.6 9.4 4.6 5L5 4.7Z"/><path d="M19 4.7H17.2C17.2 8.5 17.2 10.8 15 12.3C14 13 13.2 13.2 13.2 13.2L13.8 15.6C13.8 15.6 15 15.3 16.4 14.4C19.4 12.5 19.4 9.4 19.4 5L19 4.7Z"/><path d="M3 4H5.7V5.3H3V4Z"/><path d="M18.3 4H21V5.3H18.3V4Z"/></svg></span>
-        <span class="footer-logo-text">Daniela Soares</span>
+        <img class="logo-img logo-img-foot" src="images/logo-alpha.webp" width="211" height="112" alt="Alpha Equilíbrio" loading="lazy" decoding="async">
       </div>
       <p>Atendimento psicológico online e presencial com acolhimento, empatia e profissionalismo.</p>
       <div class="footer-contact">
