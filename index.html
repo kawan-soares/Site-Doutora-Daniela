@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daniela da Silva Soares — Psicóloga | Atendimento Online | Presencial</title>
-  <meta name="description" content="Psicóloga Daniela da Silva Soares — Atendimento online com acolhimento, empatia e profissionalismo. Agende sua consulta." />
+  <title>Alpha Equilíbrio — Clínica de Psicologia em Alphaville | Barueri/SP</title>
+  <meta name="description" content="Clínica de Psicologia Alpha Equilíbrio, com a psicóloga Daniela da Silva Soares e profissionais parceiros. Atendimento on-line e presencial em Alphaville – Barueri/SP." />
   <meta name="theme-color" content="#008A4B" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23008A4B'/%3E%3Cpath fill='%23fff' d='M9.3 4H14.7V5.4H9.3V4Z'/%3E%3Cpath fill='%23fff' d='M9.3 18.6H14.7V20H9.3V18.6Z'/%3E%3Cpath fill='%23fff' d='M11.1 4.7H12.9V19.3H11.1V4.7Z'/%3E%3Cpath fill='%23fff' d='M5 4.7H6.8C6.8 8.5 6.8 10.8 9 12.3C10 13 10.8 13.2 10.8 13.2L10.2 15.6C10.2 15.6 9 15.3 7.6 14.4C4.6 12.5 4.6 9.4 4.6 5L5 4.7Z'/%3E%3Cpath fill='%23fff' d='M19 4.7H17.2C17.2 8.5 17.2 10.8 15 12.3C14 13 13.2 13.2 13.2 13.2L13.8 15.6C13.8 15.6 15 15.3 16.4 14.4C19.4 12.5 19.4 9.4 19.4 5L19 4.7Z'/%3E%3Cpath fill='%23fff' d='M3 4H5.7V5.3H3V4Z'/%3E%3Cpath fill='%23fff' d='M18.3 4H21V5.3H18.3V4Z'/%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
@@ -31,8 +31,8 @@
   {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    "name": "Daniela da Silva Soares — Psicóloga",
-    "alternateName": "Clínica de Psicologia Alpha Equilíbrio",
+    "name": "Clínica de Psicologia Alpha Equilíbrio",
+    "alternateName": "Daniela da Silva Soares — Psicóloga",
     "description": "Psicóloga clínica e neuropsicóloga. Atendimento online e presencial para crianças, adolescentes e adultos em Alphaville – Barueri/SP.",
     "url": "https://www.clinicaalphaequilibrio.com.br/",
     "image": "https://www.clinicaalphaequilibrio.com.br/images/compartilhar-clinica.jpg",
@@ -809,6 +809,53 @@
       .pp .btn-primary { width:100%; justify-content:center; }
     }
 
+
+    /* ============ ABERTURA: CLÍNICA + REFERÊNCIAS ============ */
+    .hero-refs { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin:0 auto 36px; }
+    .hero-ref {
+      display:flex; align-items:center; gap:14px; text-align:left; text-decoration:none; color:inherit;
+      background:rgba(255,255,255,.78); border:1px solid #fff; border-radius:20px; padding:12px 20px 12px 12px;
+      box-shadow:0 14px 34px -22px rgba(15,61,42,.45); transition:transform .25s, box-shadow .25s;
+      animation:heroFade .7s .9s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .hero-ref + .hero-ref { animation-delay:1s; }
+    .hero-ref:hover { transform:translateY(-2px); box-shadow:0 20px 40px -22px rgba(15,61,42,.5); }
+    .hero-ref img { width:56px; height:56px; border-radius:16px; object-fit:cover; flex-shrink:0; }
+    .hero-ref small { display:block; font-size:12.5px; font-weight:600; color:var(--sage-dk); margin-bottom:1px; }
+    .hero-ref strong { display:block; font-family:var(--serif); font-size:19px; font-weight:600; color:var(--ink); line-height:1.2; }
+    .hero-ref em { display:block; font-style:normal; font-size:13px; color:var(--ink-soft); line-height:1.4; }
+    .hero-ref-faces { display:flex; flex-shrink:0; }
+    .hero-ref-faces img + img { margin-left:-18px; border:3px solid #fff; }
+    .hero-ref-faces img:first-child { border:3px solid #fff; }
+    .hero-actions { animation-delay:1.1s !important; }
+    @media(max-width:600px){
+      .hero-refs { flex-direction:column; align-items:stretch; gap:10px; margin-bottom:28px; }
+      .hero-ref { padding:10px 16px 10px 10px; }
+      .hero-ref img { width:50px; height:50px; }
+    }
+
+    /* ============ MENU: PARCEIROS EM DESTAQUE ============ */
+    .nav-links a.nav-hl { color:var(--sage-dk); font-weight:600; padding:7px 14px; margin:-7px 0; border-radius:100px; background:var(--mint); }
+    .nav-links a.nav-hl:hover { background:#d4ebdd; }
+    .nav-pp-m { display:none; }
+    @media(max-width:768px){
+      .nav-pp-m { display:inline-flex; align-items:center; margin-left:auto; padding:9px 14px; border-radius:100px; background:var(--mint); color:var(--sage-dk); font:600 13px "Inter",sans-serif; text-decoration:none; flex-shrink:0; }
+      .nav-insta { display:none; }
+    }
+
+    /* ============ PARCEIROS: CARD RESUMIDO + DETALHES ============ */
+    .pp-info.pp-sum { grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); }
+    .pp-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .pp-more { display:inline-flex; align-items:center; gap:8px; padding:14px 22px; border-radius:100px; border:1.5px solid var(--sage); background:#fff; color:var(--sage-dk); font:600 14.5px "Inter",sans-serif; cursor:pointer; }
+    .pp-more:hover { background:var(--mint); }
+    .pp-more:focus-visible { outline:3px solid var(--sage); outline-offset:3px; }
+    .pp-more svg { width:16px; height:16px; transition:transform .3s; }
+    .pp-more[aria-expanded="true"] svg { transform:rotate(180deg); }
+    .pp-det { margin-top:22px; padding-top:22px; border-top:1px solid var(--rule); }
+    .pp-det[hidden] { display:none; }
+    .pp-det .pp-info { grid-template-columns:1fr; }
+    @media(max-width:760px){ .pp .btn-primary { padding:15px 18px; font-size:14px; } .pp-info.pp-sum { grid-template-columns:1fr 1fr; } .pp-info.pp-sum div:first-child { grid-column:1 / -1; } .pp-actions > * { width:100%; justify-content:center; } }
+
     /* ============ MOBILE FIXES ============ */
     @media(max-width:600px) {
       .bg-fixed { display:none !important; }
@@ -925,7 +972,9 @@
       <li><a href="#modalidades">Atendimento</a></li>
       <li><a href="#depoimentos">Depoimentos</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#parceiros" class="nav-hl">Parceiros</a></li>
     </ul>
+    <a href="#parceiros" class="nav-pp-m">Parceiros</a>
     <a href="https://www.instagram.com/daniela_psicoterapia/" target="_blank" rel="noopener" class="nav-insta" title="Instagram" aria-label="Instagram @daniela_psicoterapia">
       <svg class="ic" style="width:18px;height:18px" aria-hidden="true"><use href="#i-insta"/></svg>
     </a>
@@ -941,17 +990,22 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-photo-floating">
-      <img src="images/daniela-avatar.webp" width="128" height="128" alt="Daniela da Silva Soares" fetchpriority="high" />
+    <p class="hero-eyebrow">Clínica de Psicologia</p>
+    <h1 class="hero-title"><span class="hl"><span>Alpha</span></span><span class="hl"><span>Equilíbrio</span></span></h1>
+    <p class="hero-sub">Psicologia, neuropsicologia e neuropsicopedagogia para crianças, adolescentes e adultos, com atendimento on-line e presencial em Alphaville – Barueri/SP.</p>
+    <div class="hero-refs">
+      <a class="hero-ref" href="#sobre">
+        <img src="images/daniela-avatar.webp" width="64" height="64" alt="" fetchpriority="high">
+        <span><small>À frente da clínica</small><strong>Daniela da Silva Soares</strong><em>Psicóloga clínica e neuropsicóloga<span data-crp data-sep=" · " hidden></span></em></span>
+      </a>
+      <a class="hero-ref" href="#parceiros">
+        <span class="hero-ref-faces" id="heroFaces" aria-hidden="true"></span>
+        <span><small>Rede da clínica</small><strong>Profissionais parceiros</strong><em id="heroPPtxt">Conheça quem atende com a gente</em></span>
+      </a>
     </div>
-    <p class="hero-eyebrow">Psicóloga Clínica</p>
-    <h1 class="hero-title"><span class="hl"><span>Olá, sou a</span></span><span class="hl"><span>Daniela Soares</span></span></h1>
-    <p class="hero-meta">Psicóloga | Neuropsicóloga | Atendimento Online | Presencial</p>
-    <p class="hero-crp" data-crp hidden></p>
-    <p class="hero-sub">Dedicada a oferecer um espaço acolhedor, ético e seguro para o seu cuidado emocional.</p>
     <div class="hero-actions">
       <a href="https://wa.me/5511947085492?text=Ol%C3%A1%2C%20Daniela%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" class="btn-primary">Agendar Consulta</a>
-      <a class="btn-ghost" href="#sobre">Saiba Mais</a>
+      <a class="btn-ghost" href="#equipe">Conheça a equipe</a>
     </div>
   </div>
 </section>
@@ -1442,7 +1496,7 @@
     <p class="detail-eyebrow">Profissionais parceiros</p>
     <h2 class="detail-h1" id="h-parceiros" tabindex="-1">Atendimento em parceria</h2>
     <div class="detail-body">
-      <p>Profissionais que atendem em parceria com a Alpha Equilíbrio. Conheça a especialidade e a forma de atendimento de cada um e agende direto pelo WhatsApp.</p>
+      <p>Profissionais que atendem em parceria com a Alpha Equilíbrio. O agendamento é feito pela equipe da clínica, pelo WhatsApp: é só tocar no botão da profissional escolhida.</p>
       <ul class="pp-list" id="ppList"></ul>
     </div>
   </div>
@@ -1653,6 +1707,12 @@
    Para incluir um novo profissional: copie um bloco { ... }, cole abaixo
    do último (com uma vírgula entre eles), troque os dados e coloque a
    foto quadrada na pasta images/. O site monta tudo sozinho.
+
+   Campos que aparecem no card:  foto, nome, titulo, registro,
+                                 especialidade, publico, modalidade
+   Campos de "Conheça a profissional": formacao, abordagem,
+                                 apresentacao (um texto por parágrafo), areas
+   Campo vazio ("") não aparece no site.
    whatsapp: só números com 55 + DDD. Vazio ("") usa o WhatsApp da clínica.
    ════════════════════════════════════════════════════════════════════ */
 var PARCEIROS = [
@@ -1660,14 +1720,33 @@ var PARCEIROS = [
     foto: "images/parceiro-zuleide-ordonio.webp",
     nome: "Zuleide Ordônio",
     titulo: "Psicóloga",
-    crp: "123278",
-    formacao: "Psicologia (UNIP). Pós-graduação em Saúde Mental (Santa Casa de São Paulo). Especialização em Terapia Cognitivo-Comportamental (PUC-RS). Formação em Terapia dos Esquemas em andamento (CETCC).",
+    registro: "CRP 123278",
     especialidade: "Saúde Mental e Terapia Cognitivo-Comportamental",
-    abordagem: "Terapia Cognitivo-Comportamental (TCC), integrada à Terapia dos Esquemas",
     publico: "Adultos",
     modalidade: "On-line",
-    apresentacao: "Psicóloga clínica desde 2014, atende adultos com foco em questões emocionais e relacionais. Seu trabalho busca compreender padrões emocionais e de comportamento e promover mudanças, com intervenções individualizadas para cada pessoa.",
+    formacao: "Psicologia (UNIP). Pós-graduação em Saúde Mental (Santa Casa de São Paulo). Especialização em Terapia Cognitivo-Comportamental (PUC-RS). Formação em Terapia dos Esquemas em andamento (CETCC).",
+    abordagem: "Terapia Cognitivo-Comportamental (TCC), integrada à Terapia dos Esquemas",
+    apresentacao: [
+      "Psicóloga clínica desde 2014, atende adultos com foco em questões emocionais e relacionais. Seu trabalho busca compreender padrões emocionais e de comportamento e promover mudanças, com intervenções individualizadas para cada pessoa."
+    ],
     areas: ["Ansiedade", "Depressão", "Autoestima", "Dependência emocional", "Relacionamentos abusivos", "Luto", "Exaustão mental"],
+    whatsapp: ""
+  },
+  {
+    foto: "images/parceiro-jessica-gomes.webp",
+    nome: "Jessica Sousa da Silva Gomes",
+    titulo: "Neuropsicopedagoga Clínica | Pedagoga | Aplicadora ABA",
+    registro: "",
+    especialidade: "Neuropsicopedagogia clínica e intervenção ABA",
+    publico: "",
+    modalidade: "",
+    formacao: "Graduada em Pedagogia pela Universidade de Mogi das Cruzes, Jessica possui pós-graduação em Neuropsicopedagogia Clínica e Institucional, Educação Inclusiva e Intervenção ABA aplicada ao Transtorno do Espectro Autista (TEA). Sua formação também inclui especializações em Diagnóstico e Intervenção em Dificuldades de Aprendizagem, Psicomotricidade e Arteterapia.",
+    abordagem: "",
+    apresentacao: [
+      "Tem experiência em atendimento neuropsicopedagógico clínico, acompanhamento terapêutico domiciliar e aplicação de intervenções ABA no contexto escolar. Seu trabalho é voltado ao desenvolvimento e à aprendizagem, considerando as necessidades individuais e utilizando recursos pedagógicos e atividades lúdicas.",
+      "Atualmente, está ampliando sua formação com a pós-graduação em Psicopedagogia Baseada na Análise do Comportamento Aplicada, pelo CBI of Miami."
+    ],
+    areas: ["Neuropsicopedagogia clínica", "Dificuldades de aprendizagem", "Apoio ao processo de alfabetização", "Desenvolvimento de habilidades no contexto educacional", "Intervenções educacionais e comportamentais para pessoas com TEA"],
     whatsapp: ""
   }
 ];
@@ -1676,28 +1755,45 @@ var PARCEIROS = [
 (function(){
   var CLINICA = "5511947085492";
   var esc = function(t){ return String(t || "").replace(/[&<>"]/g, function(c){ return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]; }); };
-  var list = document.getElementById("ppList"), faces = document.getElementById("ppFaces");
-  var html = "", fhtml = "";
+  var list = document.getElementById("ppList"), faces = document.getElementById("ppFaces"), hfaces = document.getElementById("heroFaces");
+  var html = "", fhtml = "", hhtml = "";
+  var row = function(rot, val){ return val ? '<div><dt>' + rot + '</dt><dd>' + esc(val) + '</dd></div>' : ''; };
   PARCEIROS.forEach(function(p, i){
     var primeiro = p.nome.split(" ")[0];
     var msg = encodeURIComponent("Olá! Vi o site da Alpha Equilíbrio e gostaria de agendar um atendimento com " + p.nome + ".");
     var wa = "https://wa.me/" + (p.whatsapp || CLINICA) + "?text=" + msg;
-    var row = function(rot, val, wide){ return val ? '<div' + (wide ? ' class="wide"' : '') + '><dt>' + rot + '</dt><dd>' + esc(val) + '</dd></div>' : ''; };
+    var aps = [].concat(p.apresentacao || []);
+    var sum = row("Especialidade", p.especialidade) + row("Público atendido", p.publico) + row("Modalidade", p.modalidade);
+    var det = row("Formação", p.formacao) + row("Abordagem", p.abordagem);
+    var temDet = det || aps.length || (p.areas && p.areas.length);
+    var id = "pp-det-" + i;
     html += '<li class="glass pp">'
       + '<div class="pp-top"><img src="' + esc(p.foto) + '" width="800" height="800" alt="' + esc(p.nome) + '" loading="lazy" decoding="async">'
-      + '<div><h3>' + esc(p.nome) + '</h3><div class="pp-crp">' + esc(p.titulo || "Psicóloga") + (p.crp ? ' · CRP ' + esc(p.crp) : '') + '</div></div></div>'
-      + '<dl class="pp-info">'
-      + row("Formação", p.formacao, true) + row("Especialidade", p.especialidade) + row("Abordagem", p.abordagem)
-      + row("Público atendido", p.publico) + row("Modalidade", p.modalidade)
-      + '</dl>'
-      + (p.apresentacao ? '<p class="pp-bio">' + esc(p.apresentacao) + '</p>' : '')
-      + (p.areas && p.areas.length ? '<ul class="pp-tags" aria-label="Áreas de atuação">' + p.areas.map(function(a){ return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>' : '')
-      + '<a class="btn-primary" href="' + wa + '" target="_blank" rel="noopener"><svg class="ic-wa" aria-hidden="true"><use href="#i-wa"/></svg>Agendar com ' + esc(primeiro) + '</a>'
+      + '<div><h3>' + esc(p.nome) + '</h3><div class="pp-crp">' + esc(p.titulo) + (p.registro ? ' · ' + esc(p.registro) : '') + '</div></div></div>'
+      + (sum ? '<dl class="pp-info pp-sum">' + sum + '</dl>' : '')
+      + '<div class="pp-actions">'
+      + '<a class="btn-primary" href="' + wa + '" target="_blank" rel="noopener"><svg class="ic-wa" aria-hidden="true"><use href="#i-wa"/></svg>Agendar com ' + esc(primeiro) + ' pela clínica</a>'
+      + (temDet ? '<button class="pp-more" type="button" aria-expanded="false" aria-controls="' + id + '">Conheça a profissional<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>' : '')
+      + '</div>'
+      + (temDet ? '<div class="pp-det" id="' + id + '" hidden>'
+          + (det ? '<dl class="pp-info">' + det + '</dl>' : '')
+          + aps.map(function(t){ return '<p class="pp-bio">' + esc(t) + '</p>'; }).join('')
+          + (p.areas && p.areas.length ? '<ul class="pp-tags" aria-label="Áreas de atuação">' + p.areas.map(function(a){ return '<li>' + esc(a) + '</li>'; }).join('') + '</ul>' : '')
+          + '</div>' : '')
       + '</li>';
-    if (i < 3) fhtml += '<img src="' + esc(p.foto) + '" width="104" height="104" alt="" loading="lazy" decoding="async"' + (i === 0 ? ' class="lead-face"' : '') + '>';
+    if (i < 3) {
+      fhtml += '<img src="' + esc(p.foto) + '" width="104" height="104" alt="" loading="lazy" decoding="async"' + (i === 0 ? ' class="lead-face"' : '') + '>';
+      hhtml += '<img src="' + esc(p.foto) + '" width="56" height="56" alt="" decoding="async">';
+    }
   });
-  list.innerHTML = html; faces.innerHTML = fhtml;
-  if (!PARCEIROS.length) { var r = document.getElementById("rede"); if (r) r.hidden = true; }
+  list.innerHTML = html; faces.innerHTML = fhtml; if (hfaces) hfaces.innerHTML = hhtml;
+  list.addEventListener("click", function(e){
+    var b = e.target.closest(".pp-more"); if (!b) return;
+    var d = document.getElementById(b.getAttribute("aria-controls")), open = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", open); d.hidden = !open;
+    b.firstChild.nodeValue = open ? "Ver menos" : "Conheça a profissional";
+  });
+  if (!PARCEIROS.length) { ["rede"].forEach(function(id){ var r = document.getElementById(id); if (r) r.hidden = true; }); }
 })();
 </script>
 <script>
